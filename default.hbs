@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}} | {{@blog.title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700italic,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" media="(max-width: 1000px)" href="{{asset "css/mobile.css"}}" />
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body>
+
+<div id="container">
+    <div id="left-container">
+        <div id="left-content">
+        {{#if @blog.logo}}<div class="blog-logo"><a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a></div>{{/if}}<br />
+	<div class="blog-title"><h1>{{@blog.title}}</h1></div>
+	        
+            <div class="blog-description"><h3>{{@blog.description}}</h3></div>
+            
+            <div class="social">
+                                <a class="icon-twitter" href="http://twitter.com/alexander_p_y">
+                        <span class="hidden">Twitter</span>
+                    </a>
+                                                    <a class="icon-github" href="http://github.com/alexanderpyoung">
+                        <span class="hidden">GitHub</span>
+                    </a>
+                                                    <a class="icon-feed" href="http://lxndryng.com/rss/">
+                        <span class="hidden">RSS</span>
+                    </a>
+            </div>
+        </div>
+    </div>
+    <div id="right-container">
+    <div id="right-content">
+    {{! Everything else gets inserted here }}
+    {{{body}}} 
+        <footer class="site-footer">
+        <div class="inner">
+             <section class="copyright">All content copyleft under GFDL &bull; Opinions stated here are not those of my employer.</section>
+        </div>
+    </footer>  
+    </div>
+    </div>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+</body>
+</html>

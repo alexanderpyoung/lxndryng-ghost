@@ -1,0 +1,215 @@
+@basecolor: #009933;
+@imagesize: 150px;
+.fixpadding {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;    
+    box-sizing: border-box; 
+    }
+    
+.dropshadow(@style, @col){
+    box-shadow: @style @col;
+    }
+
+
+html {
+	min-height: 100%;
+    }
+
+body {
+    margin: 0px;
+    padding: 0px;
+    max-width: 100%;
+    font-size: 12pt;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100%;
+    line-height: 1.5em;
+    text-align: justify;
+    }
+
+#container {
+    width:100%;
+    min-height: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    
+#left-container {
+    width:20%; 
+    background: @basecolor; 
+    min-height:100%;
+    position: fixed;
+    display:inline-block;
+    }
+
+#left-content {
+    width:80%; 
+    display: inline-block;
+    text-align: right;
+    padding-right: 20px;
+    .fixpadding();
+    float: right; 
+    min-height: 100%;
+    }
+
+#right-container {
+    width: 79%; 
+    display:inline-block; 
+    margin:0px; 
+    vertical-align:top;
+    .fixpadding();
+    padding-left: 20px;
+    min-height: 100%;
+    position: relative;
+    left: 20%;
+    }
+ 
+#right-content {
+    width: 60%;
+    }
+    
+.rounded-corners(@n) when (ispixel(@n)) {
+    -moz-border-radius: @n;
+    -webkit-border-radius: @n;
+    -o-border-radius: @n;
+    border-radius: @n;
+    }
+
+div.blog-logo  {
+    .rounded-corners(300px);
+    border: 1px solid black;
+    overflow: hidden;
+    max-width: @imagesize;
+    max-height: @imagesize;
+    width: 100%;
+    height: auto;
+    margin-right: 0px;
+    margin-left: auto;
+    img {
+        max-height: @imagesize;
+        max-width: @imagesize;
+        width: @imagesize;
+        height: @imagesize;
+        }
+    }
+    
+.blog-title {
+    font-weight: bold;
+    text-align: right;
+    color: white;
+    }
+
+.blog-description {
+    font-style: italic;
+    color: rgb(220, 255, 220);
+    }
+    
+.post-meta {
+    font-style: italic;
+    font-size: 85%;
+    color: #7C7C7C;
+    }
+
+a {
+    color: lighten(@basecolor, 10%);
+    text-decoration: none;
+  }
+
+a:hover {
+    border-bottom: 2px dotted @basecolor;
+    color: @basecolor;
+    }
+    
+code {
+    border: 1px dashed #AAA;
+    background: #DDD;
+    font-family: 'Inconsolata', monospace;
+    }
+    
+@font-face {
+    font-family: 'icons';
+    src:url('../fonts/icons.ttf') format('truetype'),
+        url('../fonts/icons.svg#icons') format('svg'),
+        url('../fonts/icons.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply these base styles to all icons */
+.icon-ghost:before, 
+.icon-feed:before, 
+.icon-twitter:before, 
+.icon-google-plus:before, 
+.icon-facebook:before,
+.icon-github:before {
+    font-family: 'icons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+/* Each icon is created by inserting the corret character into the 
+   content of the :before pseudo element. */
+
+
+.icon-feed:before {
+    content: "\007c";
+}
+.icon-twitter:before {
+    content: "\007b";
+    font-size: 1.5em;
+}
+
+.icon-github:before {
+    content:"\007a";
+}
+
+.icon-google-plus:before {
+    content: "\0068";
+}
+.icon-facebook:before {
+    content: "\007d";
+}
+
+.post-title {
+    margin-bottom: 0px;
+    font-size: 1.8em;
+    }
+    
+.hidden {
+    display: none;
+    }
+    
+.social a {
+    font-size:36pt;
+    color: white;
+    }
+    
+.share {
+    a {
+    font-size: 36pt;
+        }
+    text-align: center;
+    h4 {
+        margin-bottom: 5px;
+        }
+    }
+
+.social a:hover {
+        color: lighten(@basecolor, 40%);
+        }
+        
+.inner, .pagination {
+    text-align: center;
+    font-style: italic;
+    color: #7C7C7C;
+    font-size: 10pt;
+    line-height: 1.1em;
+    }
+    
